@@ -7,6 +7,7 @@ export const profile = {
   github: "https://github.com/tarieciphertech",
   youtube: "https://youtube.com/@tarietech5958",
   instagram: "https://www.instagram.com/unclecipher",
+  tiktok: "https://www.tiktok.com/@cipherhotspot",
 };
 
 export const skills = [

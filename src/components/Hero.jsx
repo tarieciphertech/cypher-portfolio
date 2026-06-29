@@ -1,4 +1,13 @@
 import { motion } from "framer-motion";
+import {
+  FaGithub,
+  FaYoutube,
+  FaInstagram,
+  FaLinkedin,
+  FaEnvelope,
+  FaTiktok,
+} from "react-icons/fa";
+
 import profile from "../assets/profile.png";
 import { profile as me } from "../data/profile";
 import AnimatedBackground from "./AnimatedBackground";
@@ -14,12 +23,66 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center overflow-hidden bg-[#05020a] pt-24">
       <AnimatedBackground />
 
-      <div className="fixed right-6 top-1/3 hidden lg:flex flex-col gap-5 glass rounded-2xl p-4 z-40">
-        <a href={me.github}>GitHub</a>
-        <a href={me.youtube}>YouTube</a>
-        <a href={me.instagram}>IG</a>
-        <a href={`mailto:${me.email}`}>Mail</a>
-      </div>
+     <div className="fixed right-6 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-4 glass rounded-3xl p-4 z-40">
+  <a
+    href={me.github}
+    target="_blank"
+    rel="noreferrer"
+    className="w-12 h-12 glass rounded-full flex items-center justify-center text-white hover:text-cyan-400 hover:scale-110 hover:shadow-[0_0_20px_#00f2ea] transition-all duration-300"
+    title="GitHub"
+  >
+    <FaGithub size={22} />
+  </a>
+
+  <a
+    href={me.youtube}
+    target="_blank"
+    rel="noreferrer"
+    className="w-12 h-12 glass rounded-full flex items-center justify-center text-white hover:text-cyan-400 hover:scale-110 hover:shadow-[0_0_20px_#00f2ea] transition-all duration-300"
+    title="YouTube"
+  >
+    <FaYoutube size={22} />
+  </a>
+
+  <a
+    href={me.instagram}
+    target="_blank"
+    rel="noreferrer"
+    className="w-12 h-12 glass rounded-full flex items-center justify-center text-white hover:text-cyan-400 hover:scale-110 hover:shadow-[0_0_20px_#00f2ea] transition-all duration-300"
+    title="Instagram"
+  >
+    <FaInstagram size={22} />
+  </a>
+  
+  <a
+  href={me.tiktok}
+  target="_blank"
+  rel="noreferrer"
+  className="w-12 h-12 glass rounded-full flex items-center justify-center text-white hover:text-cyan-400 hover:scale-110 hover:shadow-[0_0_20px_#00f2ea] transition-all duration-300"
+  title="TikTok"
+>
+  <FaTiktok size={22} />
+</a>
+
+  <a
+    href="www.linkedin.com/in/tarie-cipher"
+    target="_blank"
+    rel="noreferrer"
+    className="w-12 h-12 glass rounded-full flex items-center justify-center text-white hover:text-cyan-400 hover:scale-110 hover:shadow-[0_0_20px_#00f2ea] transition-all duration-300"
+    title="LinkedIn"
+  >
+  
+    <FaLinkedin size={22} />
+  </a>
+
+  <a
+    href={`mailto:${me.email}`}
+    className="w-12 h-12 glass rounded-full flex items-center justify-center text-white hover:text-cyan-400 hover:scale-110 hover:shadow-[0_0_20px_#00f2ea] transition-all duration-300"
+    title="Email"
+  >
+    <FaEnvelope size={20} />
+  </a>
+</div>
 
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center relative z-10">
         <motion.div initial={{ opacity:0, y:40 }} animate={{ opacity:1, y:0 }} transition={{ duration:.8 }}>
