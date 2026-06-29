@@ -1,3 +1,63 @@
+#!/usr/bin/env bash
+set -e
+
+mkdir -p src/components src/data src/assets
+
+cat > src/components/AnimatedBackground.jsx <<'EOF'
+export default function AnimatedBackground() {
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="absolute w-[700px] h-[700px] bg-purple-600/25 blur-[180px] rounded-full top-[-150px] right-[-120px] animate-pulse" />
+      <div className="absolute w-[600px] h-[600px] bg-pink-500/20 blur-[180px] rounded-full bottom-[-150px] left-[-120px] animate-pulse" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:40px_40px] opacity-20" />
+    </div>
+  );
+}
+EOF
+
+cat > src/components/TypingRoles.jsx <<'EOF'
+import { useEffect, useState } from "react";
+
+const roles = [
+  "Full-Stack Developer",
+  "Linux Administrator",
+  "Cybersecurity Enthusiast",
+  "Tech Entrepreneur",
+];
+
+export default function TypingRoles() {
+  const [index, setIndex] = useState(0);
+  const [text, setText] = useState("");
+
+  useEffect(() => {
+    const current = roles[index];
+    let i = 0;
+
+    const typing = setInterval(() => {
+      setText(current.slice(0, i + 1));
+      i++;
+
+      if (i === current.length) {
+        clearInterval(typing);
+        setTimeout(() => {
+          setIndex((prev) => (prev + 1) % roles.length);
+          setText("");
+        }, 1200);
+      }
+    }, 70);
+
+    return () => clearInterval(typing);
+  }, [index]);
+
+  return (
+    <p className="text-purple-300 font-mono text-lg mt-3">
+      &gt; {text}<span className="animate-pulse">_</span>
+    </p>
+  );
+}
+EOF
+
+cat > src/components/Hero.jsx <<'EOF'
 import { motion } from "framer-motion";
 import profile from "../assets/profile.png";
 import { profile as me } from "../data/profile";
@@ -97,3 +157,7 @@ export default function Hero() {
     </section>
   );
 }
+EOF
+
+npm run build
+echo "Upgrade complete. Run: npm run dev"
