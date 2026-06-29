@@ -65,7 +65,7 @@ export default function Hero() {
 </a>
 
   <a
-    href="www.linkedin.com/in/tarie-cipher"
+    href="https://www.linkedin.com/in/tarie-cipher"
     target="_blank"
     rel="noreferrer"
     className="w-12 h-12 glass rounded-full flex items-center justify-center text-white hover:text-cyan-400 hover:scale-110 hover:shadow-[0_0_20px_#00f2ea] transition-all duration-300"
@@ -124,9 +124,14 @@ export default function Hero() {
             <a href="#projects" className="px-8 py-4 rounded-xl bg-purple-600 hover:bg-purple-700 transition font-semibold glow">
               View Projects →
             </a>
-            <a href="#contact" className="px-8 py-4 rounded-xl border border-white/20 hover:border-purple-500 transition">
-              Download Resume ↓
-            </a>
+            <a
+  href={`${import.meta.env.BASE_URL}files/Tarie_Cipher_Resume.pdf`}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="px-8 py-4 rounded-xl border border-white/20 hover:border-purple-500 transition"
+>
+  View Resume
+</a>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 glass rounded-2xl p-5">
