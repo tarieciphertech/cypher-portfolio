@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: #05020a;
+  color: white;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #ff4ecd, #8b5cf6, #38bdf8);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.glass {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(16px);
+}
+
+.glow {
+  box-shadow: 0 0 40px rgba(236,72,153,0.35);
+}
