@@ -8,21 +8,31 @@ body {
   margin: 0;
   background: #05020a;
   color: white;
-  font-family: Inter, system-ui, sans-serif;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  text-rendering: optimizeLegibility;
 }
 
+::selection { background: rgba(34, 211, 238, .25); color: white; }
+
 .gradient-text {
-  background: linear-gradient(90deg, #ff4ecd, #8b5cf6, #38bdf8);
+  background: linear-gradient(110deg, #ffffff 5%, #67e8f9 42%, #a78bfa 78%, #f0abfc 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
 }
 
 .glass {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.12);
-  backdrop-filter: blur(16px);
+  background: linear-gradient(135deg, rgba(255,255,255,.065), rgba(255,255,255,.025));
+  border: 1px solid rgba(255,255,255,.11);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 }
 
-.glow {
-  box-shadow: 0 0 40px rgba(236,72,153,0.35);
+.glow { box-shadow: 0 0 45px rgba(139,92,246,.28); }
+
+a { transition: color .2s ease, border-color .2s ease, background-color .2s ease, transform .2s ease; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
