@@ -30,9 +30,6 @@ export default function Hero() {
 
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-[1.1fr_.9fr] gap-16 items-center relative z-10 w-full">
         <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8 }}>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-400/10 border border-cyan-300/20 text-cyan-200 text-sm mb-6">
-            <span className="w-2 h-2 bg-cyan-300 rounded-full animate-pulse" /> Building from Southern Africa
-          </div>
           <p className="text-sm uppercase tracking-[0.3em] text-gray-500 mb-4">{me.brand}</p>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-[1.02] tracking-tight">I build <span className="gradient-text">software that matters.</span></h1>
           <h2 className="text-xl md:text-2xl mt-7 text-gray-100 font-semibold">Software Engineer • Full-Stack Developer • Technology Builder</h2>
