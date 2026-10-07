@@ -16,8 +16,8 @@ export default function Skills() {
         <SectionTitle label="Technology" title="A practical stack for building from interface to infrastructure." />
         <div className="grid lg:grid-cols-4 gap-4 mb-10">
           {groups.map(([num, title, items]) => (
-            <motion.div whileHover={{ y: -5 }} key={title} className="bg-white/[0.03] rounded-2xl p-6 border border-white/10 hover:bg-white/[0.06] transition">
-              <span className="font-mono text-xs text-gray-500">{num}</span>
+            <motion.div whileHover={{ y: -5 }} key={title} className="glass rounded-2xl p-6 border-white/10 hover:border-cyan-400/30 transition">
+              <span className="font-mono text-xs text-cyan-300">{num}</span>
               <h3 className="text-xl font-bold mt-3 mb-5">{title}</h3>
               <div className="flex flex-wrap gap-2">
                 {items.map((item) => <span key={item} className="text-xs text-gray-300 px-2.5 py-1.5 rounded-lg bg-white/5 border border-white/10">{item}</span>)}
