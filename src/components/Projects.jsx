@@ -4,24 +4,34 @@ import SectionTitle from "./SectionTitle";
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-28 px-6 md:px-10 bg-[#080808]">
-      <div className="max-w-[1400px] mx-auto">
-        <SectionTitle label="02 / Selected Work" title="Projects built to solve real problems." />
-        <div className="divide-y divide-white/10 border-y border-white/10">
+    <section id="projects" className="py-28 px-6">
+      <div className="max-w-7xl mx-auto">
+        <SectionTitle label="Selected Work" title="Projects built to solve real problems." />
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
-            <motion.article key={project.title} initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:.2}} transition={{duration:.45}} className="group grid lg:grid-cols-[70px_1fr_1.15fr] gap-5 lg:gap-10 py-8 items-center relative">
-              <span className="font-mono text-xs text-white/25">{String(index+1).padStart(2,"0")}</span>
-              <div>
-                <p className="text-[10px] uppercase tracking-[.22em] text-[#00f2ea] mb-3">{project.category}</p>
-                <h3 className="text-3xl md:text-4xl font-bold tracking-[-.04em]">{project.title}</h3>
-                <p className="text-sm text-white/35 mt-3 max-w-xl leading-6">{project.desc}</p>
+            <motion.article
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.45, delay: index * 0.05 }}
+              whileHover={{ y: -8 }}
+              className="group glass rounded-3xl p-7 flex flex-col min-h-[310px] border-white/10 hover:border-cyan-400/30 transition-colors"
+              key={project.title}
+            >
+              <div className="flex items-center justify-between gap-3 mb-5">
+                <span className="text-xs uppercase tracking-[0.2em] text-cyan-300">{project.category}</span>
+                <span className="text-xs text-gray-500">{project.status}</span>
               </div>
-              <div className="relative aspect-[16/8] overflow-hidden border border-white/10 bg-white/[.03]">
-                <img src={project.image} alt={`${project.title} project preview`} loading="lazy" className="w-full h-full object-cover grayscale opacity-55 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-[1.03] transition duration-700" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/55 to-transparent" />
-                <div className="absolute bottom-3 left-4 flex flex-wrap gap-2">
-                  {project.stack.slice(0,3).map(item => <span key={item} className="text-[9px] uppercase tracking-[.14em] bg-black/60 px-2 py-1">{item}</span>)}
-                </div>
+              <div className="relative -mx-7 -mt-7 mb-7 h-48 overflow-hidden rounded-t-[2rem] bg-white/5">
+                <img src={project.image} alt={`${project.title} project`} loading="lazy" className="h-full w-full object-cover opacity-70 transition duration-700 group-hover:scale-105 group-hover:opacity-90" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b0b] via-transparent to-transparent" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4 group-hover:text-cyan-300 transition">{project.title}</h3>
+              <p className="text-gray-400 leading-7 flex-1">{project.desc}</p>
+              <div className="flex flex-wrap gap-2 mt-6">
+                {project.stack.map((item) => (
+                  <span key={item} className="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-gray-300">{item}</span>
+                ))}
               </div>
             </motion.article>
           ))}
