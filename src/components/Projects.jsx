@@ -15,14 +15,14 @@ export default function Projects() {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.45, delay: index * 0.05 }}
               whileHover={{ y: -8 }}
-              className="group glass rounded-3xl p-7 flex flex-col min-h-[310px] border-white/10 hover:border-cyan-400/30 transition-colors"
+              className="group bg-white/[0.025] rounded-[2rem] p-7 flex flex-col min-h-[340px] border border-white/10 hover:bg-white/[0.05] hover:border-white/20 transition-all"
               key={project.title}
             >
               <div className="flex items-center justify-between gap-3 mb-5">
-                <span className="text-xs uppercase tracking-[0.2em] text-cyan-300">{project.category}</span>
+                <span className="text-xs uppercase tracking-[0.2em] text-gray-500">{project.category}</span>
                 <span className="text-xs text-gray-500">{project.status}</span>
               </div>
-              <h3 className="text-2xl font-bold mb-4 group-hover:text-cyan-300 transition">{project.title}</h3>
+              <h3 className="text-3xl font-bold mb-4 group-hover:text-white transition">{project.title}</h3>
               <p className="text-gray-400 leading-7 flex-1">{project.desc}</p>
               <div className="flex flex-wrap gap-2 mt-6">
                 {project.stack.map((item) => (
