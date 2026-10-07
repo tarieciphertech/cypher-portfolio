@@ -2,18 +2,18 @@ import { profile } from "../data/profile";
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-28 px-6">
-      <div className="max-w-5xl mx-auto bg-white/[0.035] border border-white/10 rounded-[2rem] p-8 md:p-16 text-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.06),transparent_55%)] pointer-events-none" />
-        <div className="relative">
-          <p className="text-gray-500 text-xs uppercase tracking-[0.3em] mb-5">Start a project • Tlokweng, Botswana</p>
-          <h2 className="text-4xl md:text-6xl font-black text-white mb-5 tracking-tight">Have a problem worth solving?</h2>
-          <p className="text-gray-400 text-lg leading-8 max-w-2xl mx-auto mb-9">Based in Tlokweng and serving Gaborone and clients across Botswana, I can help build, automate, fix, or improve your digital systems.</p>
-          <div className="flex flex-wrap justify-center gap-3">
-            <a href={`mailto:${profile.email}`} className="bg-white text-black hover:bg-gray-200 px-7 py-3.5 rounded-full font-semibold transition">Email me</a>
-            <a href={profile.github} target="_blank" rel="noreferrer" className="glass px-6 py-3.5 rounded-full hover:border-cyan-400/40 transition">GitHub</a>
-            <a href={profile.linkedin} target="_blank" rel="noreferrer" className="glass px-6 py-3.5 rounded-full hover:border-cyan-400/40 transition">LinkedIn</a>
-            <a href={profile.tiktok} target="_blank" rel="noreferrer" className="glass px-6 py-3.5 rounded-full hover:border-cyan-400/40 transition">TikTok</a>
+    <section id="contact" className="py-32 px-6 md:px-10">
+      <div className="max-w-[1400px] mx-auto border-t border-white/10 pt-10">
+        <p className="text-[11px] uppercase tracking-[.25em] text-[#00f2ea]">04 / Contact</p>
+        <div className="grid lg:grid-cols-[1fr_auto] gap-10 items-end mt-8">
+          <h2 className="text-[clamp(3.5rem,8vw,8rem)] font-black leading-[.82] tracking-[-.07em]">LET'S<br/><span className="text-white/35">BUILD.</span></h2>
+          <div className="max-w-md">
+            <p className="text-white/40 leading-7 mb-7">Based in Tlokweng and serving Gaborone and clients across Botswana. If you have a system to build, a problem to solve, or infrastructure to fix, let's talk.</p>
+            <div className="flex flex-wrap gap-3">
+              <a href={`mailto:${profile.email}`} className="bg-[#00f2ea] text-black px-6 py-3 font-bold hover:bg-white">Email me</a>
+              <a href={profile.github} target="_blank" rel="noreferrer" className="border border-white/15 px-5 py-3 hover:border-[#00f2ea] hover:text-[#00f2ea]">GitHub</a>
+              <a href={profile.linkedin} target="_blank" rel="noreferrer" className="border border-white/15 px-5 py-3 hover:border-[#00f2ea] hover:text-[#00f2ea]">LinkedIn</a>
+            </div>
           </div>
         </div>
       </div>
