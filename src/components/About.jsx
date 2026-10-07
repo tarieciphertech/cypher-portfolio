@@ -13,7 +13,7 @@ export default function About() {
         <SectionTitle label="About Me" title="Technology should solve problems, not create more of them." />
         <div className="grid lg:grid-cols-[1.15fr_.85fr] gap-8 items-stretch">
           <div className="glass rounded-3xl p-8 md:p-10">
-            <p className="text-gray-300 text-lg leading-8">I'm Tarie Cipher, a software engineer and founder of Cypher Technologies. I enjoy taking a real-world problem, understanding how it actually works, and building a practical digital solution around it.</p>
+            <p className="text-gray-300 text-lg leading-8">I'm Tarie Cipher, a software engineer and founder of Cypher Technologies based in Tlokweng, Botswana, near Gaborone. I enjoy taking a real-world problem, understanding how it actually works, and building a practical digital solution around it for people and businesses in Botswana and beyond.</p>
             <p className="text-gray-400 text-lg leading-8 mt-5">My work sits at the intersection of software development, infrastructure, networking, and cybersecurity. I care about systems that are understandable, maintainable, and genuinely useful to the people who rely on them.</p>
           </div>
           <div className="grid gap-4">
