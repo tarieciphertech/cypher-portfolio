@@ -30,10 +30,10 @@ export default function Hero() {
 
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-[1.1fr_.9fr] gap-16 items-center relative z-10 w-full">
         <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8 }}>
-          <p className="text-sm uppercase tracking-[0.3em] text-gray-500 mb-4">{me.brand}</p>
+          <p className="text-sm uppercase tracking-[0.3em] text-gray-500 mb-4">{me.brand} • {me.location}</p>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-[1.02] tracking-tight">I build <span className="gradient-text">software that matters.</span></h1>
-          <h2 className="text-xl md:text-2xl mt-7 text-gray-100 font-semibold">Software Engineer • Full-Stack Developer • Technology Builder</h2>
-          <p className="text-gray-400 mt-5 text-lg leading-8 max-w-2xl">I turn ideas and messy real-world processes into useful digital products — from business platforms and APIs to Linux infrastructure and security-minded systems.</p>
+          <h2 className="text-xl md:text-2xl mt-7 text-gray-100 font-semibold">Software Engineer • Full-Stack Developer • Technology Builder in Tlokweng, Botswana</h2>
+          <p className="text-gray-400 mt-5 text-lg leading-8 max-w-2xl">Based in Tlokweng near Gaborone, Botswana, I turn ideas and messy real-world processes into useful digital products — from business platforms and APIs to Linux infrastructure and security-minded systems.</p>
           <TypingRoles />
           <div className="flex flex-wrap gap-2.5 mt-7">
             {tech.map((item) => <span key={item} className="px-3.5 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">{item}</span>)}
