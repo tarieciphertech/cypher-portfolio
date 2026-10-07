@@ -5,7 +5,7 @@ import { profile as me } from "../data/profile";
 import AnimatedBackground from "./AnimatedBackground";
 import TypingRoles from "./TypingRoles";
 
-const tech = ["React", "Python", "FastAPI", "Linux", "AWS", "Docker", "PostgreSQL", "Cybersecurity"];
+const tech = ["Web Development", "Business Systems", "Python APIs", "Cybersecurity", "Linux", "Cloud", "Networking", "IT Support"];
 
 export default function Hero() {
   const socials = [
@@ -32,8 +32,8 @@ export default function Hero() {
         <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8 }}>
           <p className="text-sm uppercase tracking-[0.3em] text-gray-500 mb-4">{me.brand} • {me.location}</p>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-[1.02] tracking-tight">I build <span className="gradient-text">software that matters.</span></h1>
-          <h2 className="text-xl md:text-2xl mt-7 text-gray-100 font-semibold">Software Engineer • Full-Stack Developer • Technology Builder in Tlokweng, Botswana</h2>
-          <p className="text-gray-400 mt-5 text-lg leading-8 max-w-2xl">Based in Tlokweng near Gaborone, Botswana, I turn ideas and messy real-world processes into useful digital products — from business platforms and APIs to Linux infrastructure and security-minded systems.</p>
+          <h2 className="text-xl md:text-2xl mt-7 text-gray-100 font-semibold">Software Developer • Business Systems • Cybersecurity • IT Infrastructure in Botswana</h2>
+          <p className="text-gray-400 mt-5 text-lg leading-8 max-w-2xl">Based in Tlokweng near Gaborone, Botswana, I build websites, business systems, APIs and secure digital infrastructure — and help businesses solve networking, Linux, cloud and IT problems.</p>
           <TypingRoles />
           <div className="flex flex-wrap gap-2.5 mt-7">
             {tech.map((item) => <span key={item} className="px-3.5 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">{item}</span>)}
@@ -51,7 +51,7 @@ export default function Hero() {
           <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 glass rounded-2xl px-5 py-4 w-72 hidden sm:block">
             <p className="text-green-400 font-mono text-sm">cypher@portfolio:~$ whoami</p>
             <p className="font-mono text-purple-300 mt-1">{me.name}</p>
-            <p className="text-gray-500 text-xs mt-2">Software • Systems • Security</p>
+            <p className="text-gray-500 text-xs mt-2">Software • Systems • Security • IT</p>
           </div>
         </motion.div>
       </div>
