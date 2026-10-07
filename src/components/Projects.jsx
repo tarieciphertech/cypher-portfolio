@@ -22,7 +22,7 @@ export default function Projects() {
                 <span className="text-xs uppercase tracking-[0.2em] text-gray-500">{project.category}</span>
                 <span className="text-xs text-gray-500">{project.status}</span>
               </div>
-              <h3 className="text-3xl font-bold mb-4 group-hover:text-white transition">{project.title}</h3>
+              <div className="relative -mx-7 -mt-7 mb-7 h-48 overflow-hidden rounded-t-[2rem] bg-white/5"><img src={project.image} alt={`${project.title} project`} loading="lazy" className="h-full w-full object-cover opacity-70 transition duration-700 group-hover:scale-105 group-hover:opacity-90" /><div className="absolute inset-0 bg-gradient-to-t from-[#0b0b0b] via-transparent to-transparent" /></div><h3 className="text-3xl font-bold mb-4 group-hover:text-white transition">{project.title}</h3>
               <p className="text-gray-400 leading-7 flex-1">{project.desc}</p>
               <div className="flex flex-wrap gap-2 mt-6">
                 {project.stack.map((item) => (
