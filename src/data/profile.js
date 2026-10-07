@@ -3,6 +3,8 @@ export const profile = {
   brand: "Cypher Technologies",
   role: "Software Engineer & Technology Builder",
   tagline: "I build useful software, business systems, and secure digital infrastructure.",
+  location: "Tlokweng, Gaborone, Botswana",
+  serviceArea: "Tlokweng • Gaborone • Botswana • Southern Africa",
   email: "cipher@cyphertech.co.zw",
   github: "https://github.com/tarieciphertech",
   youtube: "https://youtube.com/@tarietech5958",
