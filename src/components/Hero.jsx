@@ -2,58 +2,61 @@ import { motion } from "framer-motion";
 import { FaGithub, FaYoutube, FaInstagram, FaLinkedin, FaEnvelope, FaTiktok } from "react-icons/fa";
 import profile from "../assets/profile.png";
 import { profile as me } from "../data/profile";
-import AnimatedBackground from "./AnimatedBackground";
 import TypingRoles from "./TypingRoles";
 
-const tech = ["Web Development", "Business Systems", "Python APIs", "Cybersecurity", "Linux", "Cloud", "Networking", "IT Support"];
+const tech = ["Web Development", "Business Systems", "Cybersecurity", "Linux", "Cloud", "Networking"];
 
 export default function Hero() {
   const socials = [
-    [me.github, FaGithub, "GitHub"],
-    [me.youtube, FaYoutube, "YouTube"],
-    [me.instagram, FaInstagram, "Instagram"],
-    [me.tiktok, FaTiktok, "TikTok"],
-    [me.linkedin, FaLinkedin, "LinkedIn"],
-    [`mailto:${me.email}`, FaEnvelope, "Email"],
+    [me.github, FaGithub, "GitHub"], [me.youtube, FaYoutube, "YouTube"],
+    [me.instagram, FaInstagram, "Instagram"], [me.tiktok, FaTiktok, "TikTok"],
+    [me.linkedin, FaLinkedin, "LinkedIn"], [`mailto:${me.email}`, FaEnvelope, "Email"],
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#080808] pt-24">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_35%,rgba(255,255,255,0.08),transparent_30%),radial-gradient(circle_at_15%_80%,rgba(255,255,255,0.04),transparent_28%)]" />
-      <div className="fixed right-5 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-3 glass rounded-3xl p-3 z-40">
-        {socials.map(([href, Icon, label]) => (
-          <a key={label} href={href} target={label === "Email" ? undefined : "_blank"} rel={label === "Email" ? undefined : "noreferrer"} aria-label={label} title={label} className="w-11 h-11 rounded-full flex items-center justify-center text-white hover:text-cyan-300 hover:scale-110 hover:shadow-[0_0_20px_#00f2ea] transition-all">
-            <Icon size={20} />
-          </a>
-        ))}
-      </div>
+    <section className="min-h-screen bg-[#050505] pt-28">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-10">
+        <div className="grid lg:grid-cols-[1.2fr_.8fr] gap-12 lg:gap-20 items-end min-h-[78vh] pb-20">
+          <motion.div initial={{opacity:0,y:30}} animate={{opacity:1,y:0}} transition={{duration:.8}}>
+            <div className="flex items-center gap-3 mb-8">
+              <span className="w-10 h-px bg-[#00f2ea]" />
+              <p className="text-[11px] uppercase tracking-[0.28em] text-white/45">{me.brand} / {me.location}</p>
+            </div>
+            <h1 className="text-[clamp(4rem,10vw,9.5rem)] font-black leading-[.82] tracking-[-0.075em] max-w-5xl">
+              SOFTWARE<br />
+              <span className="text-white/35">THAT</span> <span className="text-[#00f2ea]">WORKS.</span>
+            </h1>
+            <div className="mt-10 grid md:grid-cols-[1fr_auto] gap-8 items-end max-w-4xl">
+              <div>
+                <h2 className="text-lg md:text-xl font-medium text-white/85">Software Developer • Business Systems • Cybersecurity • IT Infrastructure</h2>
+                <p className="text-white/45 mt-4 leading-7 max-w-2xl">Based in Tlokweng near Gaborone, Botswana. I build websites, business systems, APIs and secure digital infrastructure — and solve the networking, Linux, cloud and IT problems around them.</p>
+                <TypingRoles />
+              </div>
+              <a href="#projects" className="group text-sm uppercase tracking-[0.2em] flex items-center gap-4 whitespace-nowrap">
+                <span className="w-12 h-12 border border-white/20 flex items-center justify-center group-hover:border-[#00f2ea] group-hover:text-[#00f2ea]">↓</span>
+                Selected work
+              </a>
+            </div>
+            <div className="flex flex-wrap gap-x-6 gap-y-3 mt-10 pt-6 border-t border-white/10">
+              {tech.map((item) => <span key={item} className="text-[11px] uppercase tracking-[0.16em] text-white/35">{item}</span>)}
+            </div>
+          </motion.div>
 
-      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-[1.1fr_.9fr] gap-16 items-center relative z-10 w-full">
-        <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8 }}>
-          <p className="text-xs uppercase tracking-[0.35em] text-gray-500 mb-6">{me.brand} • {me.location}</p>
-          <h1 className="text-6xl md:text-7xl lg:text-[7.5rem] font-black leading-[0.9] tracking-[-0.055em]">I build <span className="text-white">digital systems<br className="hidden md:block" /> that matter.</span></h1>
-          <h2 className="text-lg md:text-xl mt-9 text-gray-300 font-medium max-w-2xl">Software Developer • Business Systems • Cybersecurity • IT Infrastructure in Botswana</h2>
-          <p className="text-gray-500 mt-5 text-base md:text-lg leading-8 max-w-xl">Based in Tlokweng near Gaborone, Botswana, I build websites, business systems, APIs and secure digital infrastructure — and help businesses solve networking, Linux, cloud and IT problems.</p>
-          <TypingRoles />
-          <div className="flex flex-wrap gap-2.5 mt-8">
-            {tech.map((item) => <span key={item} className="px-3.5 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">{item}</span>)}
-          </div>
-          <div className="flex flex-wrap gap-4 mt-9">
-            <a href="#projects" className="px-7 py-3.5 rounded-full bg-white text-black hover:bg-gray-200 transition font-semibold">Explore my work →</a>
-            <a href="#contact" className="px-7 py-3.5 rounded-full border border-white/15 hover:border-white/40 hover:bg-white/5 transition font-semibold">Let's talk</a>
-          </div>
-        </motion.div>
-
-        <motion.div initial={{ opacity: 0, scale: .88 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1 }} className="relative flex justify-center lg:justify-end">
-          <div className="absolute w-[min(82vw,470px)] h-[min(82vw,470px)] rounded-full border border-white/10" />
-          <div className="absolute w-[min(68vw,390px)] h-[min(68vw,390px)] rounded-full border border-white/5" />
-          <img src={profile} alt={me.name} className="relative w-[min(70vw,410px)] h-[min(70vw,410px)] rounded-full object-cover object-center border border-white/15 shadow-[0_25px_100px_rgba(0,0,0,.65)]" />
-          <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 glass rounded-2xl px-5 py-4 w-72 hidden sm:block">
-            <p className="text-white/60 font-mono text-sm">cypher@portfolio:~$ whoami</p>
-            <p className="font-mono text-white mt-1">{me.name}</p>
-            <p className="text-gray-500 text-xs mt-2">Software • Systems • Security • IT</p>
-          </div>
-        </motion.div>
+          <motion.div initial={{opacity:0,scale:.96}} animate={{opacity:1,scale:1}} transition={{duration:1}} className="relative">
+            <div className="absolute -top-6 -left-6 text-[10px] uppercase tracking-[.3em] text-[#00f2ea]">01 / Profile</div>
+            <div className="relative aspect-[4/5] overflow-hidden border border-white/10 bg-white/[.03]">
+              <img src={profile} alt={me.name} className="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+              <div className="absolute bottom-5 left-5 right-5 flex justify-between items-end">
+                <div><p className="text-2xl font-bold">{me.name}</p><p className="text-xs text-white/45 mt-1">Software • Systems • Security • IT</p></div>
+                <span className="text-[#00f2ea] text-xs font-mono">BW / 2026</span>
+              </div>
+            </div>
+            <div className="flex justify-end gap-3 mt-4">
+              {socials.map(([href, Icon, label]) => <a key={label} href={href} target={label === "Email" ? undefined : "_blank"} rel={label === "Email" ? undefined : "noreferrer"} aria-label={label} className="text-white/35 hover:text-[#00f2ea]"><Icon size={15}/></a>)}
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
