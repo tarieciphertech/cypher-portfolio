@@ -2,7 +2,7 @@ export const profile = {
   name: "Tarie Cipher",
   brand: "Cypher Technologies",
   role: "Software Engineer & Technology Builder",
-  tagline: "I build useful software, business systems, and secure digital infrastructure.",
+  tagline: "Web development, business systems, APIs, cybersecurity, infrastructure, networking and IT support.",
   location: "Tlokweng, Gaborone, Botswana",
   serviceArea: "Tlokweng • Gaborone • Botswana • Southern Africa",
   email: "cipher@cyphertech.co.zw",
@@ -14,9 +14,10 @@ export const profile = {
 };
 
 export const skills = [
-  "React", "JavaScript", "Python", "FastAPI", "Flask", "Linux",
-  "PostgreSQL", "SQLite", "Docker", "AWS", "GitHub", "Networking",
-  "Cybersecurity", "REST APIs", "Tailwind CSS", "IT Support"
+  "Web Development", "React", "JavaScript", "Python", "FastAPI", "Flask",
+  "Business Systems", "PostgreSQL", "SQLite", "REST APIs", "API Integration",
+  "Linux", "Docker", "Cloud Infrastructure", "AWS", "GitHub", "Networking",
+  "Cybersecurity", "Tailwind CSS", "IT Support", "Technical Troubleshooting"
 ];
 
 export const projects = [
@@ -29,10 +30,10 @@ export const projects = [
 ];
 
 export const services = [
-  ["Web Development", "Fast, responsive websites, dashboards, portals, and customer-facing platforms."],
-  ["Business Systems", "Custom software that turns repetitive business processes into practical digital workflows."],
-  ["APIs & Backend", "Reliable Python APIs, database-backed applications, authentication, and integrations."],
-  ["Cybersecurity", "Security-minded configuration, hardening, safer workflows, and practical technical guidance."],
-  ["Cloud & Linux", "Linux servers, deployments, Docker environments, AWS infrastructure, and troubleshooting."],
-  ["Networking & IT", "LAN, Wi-Fi, hotspot, device, software, and general technical support."],
+  ["Web Development", "Responsive websites, web applications, dashboards, portals, landing pages, and customer-facing platforms built for real business goals."],
+  ["Custom Business Systems", "Software for business workflows such as management portals, administration dashboards, booking, recruitment, records, automation, and reporting."],
+  ["APIs & Backend", "Python APIs, database-backed applications, authentication, integrations, REST services, and reliable backend architecture."],
+  ["Cybersecurity", "Security-minded configuration, system hardening, safer authentication and workflows, vulnerability awareness, and practical security guidance."],
+  ["Linux & Cloud Infrastructure", "Linux server administration, Docker, deployments, hosting environments, cloud infrastructure, troubleshooting, and system maintenance."],
+  ["Networking & IT Support", "LAN and Wi-Fi setup, hotspot and network troubleshooting, device and software support, connectivity, and practical technical problem-solving."],
 ];
