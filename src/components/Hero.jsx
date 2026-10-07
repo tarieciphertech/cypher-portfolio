@@ -1,37 +1,63 @@
 import { motion } from "framer-motion";
 import { FaGithub, FaYoutube, FaInstagram, FaLinkedin, FaEnvelope, FaTiktok } from "react-icons/fa";
 import profile from "../assets/profile.png";
-import hoverProfile from "../assets/hero.png";
 import { profile as me } from "../data/profile";
 import TypingRoles from "./TypingRoles";
 
-const socials=[[me.github,FaGithub,"GitHub"],[me.youtube,FaYoutube,"YouTube"],[me.instagram,FaInstagram,"Instagram"],[me.tiktok,FaTiktok,"TikTok"],[me.linkedin,FaLinkedin,"LinkedIn"],[`mailto:${me.email}`,FaEnvelope,"Email"]];
+const tech = ["Web Development", "Business Systems", "Cybersecurity", "Linux", "Cloud", "Networking"];
 
-export default function Hero(){
- return <section className="relative min-h-screen overflow-hidden bg-[#050607] pt-28">
-  <div className="site-grid absolute inset-0"/><div className="hero-glow absolute -right-40 top-24 w-[620px] h-[620px] rounded-full opacity-70"/>
-  <div className="relative max-w-[1500px] mx-auto px-5 md:px-10">
-   <div className="min-h-[88vh] flex flex-col justify-center py-20">
-    <motion.div initial={{opacity:0,y:35}} animate={{opacity:1,y:0}} transition={{duration:.8}} className="max-w-6xl">
-     <div className="flex items-center gap-3 mb-7"><span className="h-px w-12 bg-[#00f2ea]"/><span className="text-[10px] uppercase tracking-[.3em] text-white/45">Cypher Technologies · Tlokweng / Gaborone</span></div>
-     <h1 className="font-black uppercase tracking-[-.085em] leading-[.78] text-[clamp(4.8rem,12vw,12rem)]">I BUILD<br/><span className="text-white/20">DIGITAL</span><br/><span className="text-[#00f2ea]">SYSTEMS.</span></h1>
-     <div className="mt-10 grid lg:grid-cols-[1fr_auto] gap-10 items-end max-w-5xl">
-      <div><p className="text-xl md:text-2xl text-white/85 max-w-3xl leading-tight">Software, business systems, cybersecurity and infrastructure — built to work in the real world.</p><p className="text-sm md:text-base text-white/40 max-w-2xl leading-7 mt-5">I'm Tarie Cipher, a software engineer and technology builder in Botswana. I turn messy business and technical problems into useful, dependable systems.</p><TypingRoles/></div>
-      <a href="#projects" className="group flex items-center gap-3 text-[10px] uppercase tracking-[.22em] text-white/55 hover:text-[#00f2ea]">Explore the work<span className="w-11 h-11 rounded-full border border-white/15 flex items-center justify-center group-hover:border-[#00f2ea] group-hover:translate-y-1">↓</span></a>
-     </div>
-    </motion.div>
-    <motion.div initial={{opacity:0,y:40}} animate={{opacity:1,y:0}} transition={{duration:1,delay:.15}} className="mt-14 grid lg:grid-cols-[1fr_360px] gap-8 items-end">
-     <div className="flex flex-wrap gap-2 max-w-3xl">{["Web Development","Business Systems","APIs","Cybersecurity","Linux","Cloud","Networking","IT Support"].map(item=><span key={item} className="border border-white/10 bg-white/[.025] px-3 py-2 text-[9px] uppercase tracking-[.17em] text-white/40">{item}</span>)}</div>
-     <div className="group relative h-[260px] md:h-[330px] overflow-hidden rounded-[2rem] border border-white/10 bg-[#0a0c0d] shadow-2xl">
-      <img src={profile} alt={me.name} className="absolute inset-0 w-full h-full object-cover object-center grayscale transition-all duration-700 ease-out group-hover:opacity-0 group-hover:scale-105"/>
-      <img src={hoverProfile} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover object-center opacity-0 transition-all duration-700 ease-out group-hover:opacity-100 group-hover:scale-105"/>
-      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"/>
-      <div className="absolute left-5 right-5 bottom-5 flex items-end justify-between"><div><p className="text-xl font-bold tracking-tight">{me.name}</p><p className="text-[10px] uppercase tracking-[.2em] text-white/45 mt-1">Software · Systems · Security</p></div><span className="text-[9px] font-mono text-[#00f2ea]">BW / 2026</span></div>
-      <div className="absolute top-4 right-4 rounded-full border border-white/15 bg-black/40 px-3 py-1 text-[8px] uppercase tracking-[.2em] text-white/50 opacity-0 group-hover:opacity-100 transition-opacity">Hover to reveal</div>
-     </div>
-    </motion.div>
-    <div className="mt-8 border-t border-white/10 pt-4 flex justify-between items-center"><div className="flex gap-4 text-white/35">{socials.map(([href,Icon,label])=><a key={label} href={href} target={label==="Email"?undefined:"_blank"} rel={label==="Email"?undefined:"noreferrer"} aria-label={label} className="hover:text-[#00f2ea]"><Icon size={14}/></a>)}</div><span className="text-[9px] uppercase tracking-[.25em] text-white/25">Scroll to explore ↓</span></div>
-   </div>
-  </div>
- </section>
+export default function Hero() {
+  const socials = [
+    [me.github, FaGithub, "GitHub"], [me.youtube, FaYoutube, "YouTube"],
+    [me.instagram, FaInstagram, "Instagram"], [me.tiktok, FaTiktok, "TikTok"],
+    [me.linkedin, FaLinkedin, "LinkedIn"], [`mailto:${me.email}`, FaEnvelope, "Email"],
+  ];
+
+  return (
+    <section className="min-h-screen bg-[#050505] pt-28">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-10">
+        <div className="grid lg:grid-cols-[1.2fr_.8fr] gap-12 lg:gap-20 items-end min-h-[78vh] pb-20">
+          <motion.div initial={{opacity:0,y:30}} animate={{opacity:1,y:0}} transition={{duration:.8}}>
+            <div className="flex items-center gap-3 mb-8">
+              <span className="w-10 h-px bg-[#00f2ea]" />
+              <p className="text-[11px] uppercase tracking-[0.28em] text-white/45">{me.brand} / {me.location}</p>
+            </div>
+            <h1 className="text-[clamp(4rem,10vw,9.5rem)] font-black leading-[.82] tracking-[-0.075em] max-w-5xl">
+              SOFTWARE<br />
+              <span className="text-white/35">THAT</span> <span className="text-[#00f2ea]">WORKS.</span>
+            </h1>
+            <div className="mt-10 grid md:grid-cols-[1fr_auto] gap-8 items-end max-w-4xl">
+              <div>
+                <h2 className="text-lg md:text-xl font-medium text-white/85">Software Developer • Business Systems • Cybersecurity • IT Infrastructure</h2>
+                <p className="text-white/45 mt-4 leading-7 max-w-2xl">Based in Tlokweng near Gaborone, Botswana. I build websites, business systems, APIs and secure digital infrastructure — and solve the networking, Linux, cloud and IT problems around them.</p>
+                <TypingRoles />
+              </div>
+              <a href="#projects" className="group text-sm uppercase tracking-[0.2em] flex items-center gap-4 whitespace-nowrap">
+                <span className="w-12 h-12 border border-white/20 flex items-center justify-center group-hover:border-[#00f2ea] group-hover:text-[#00f2ea]">↓</span>
+                Selected work
+              </a>
+            </div>
+            <div className="flex flex-wrap gap-x-6 gap-y-3 mt-10 pt-6 border-t border-white/10">
+              {tech.map((item) => <span key={item} className="text-[11px] uppercase tracking-[0.16em] text-white/35">{item}</span>)}
+            </div>
+          </motion.div>
+
+          <motion.div initial={{opacity:0,scale:.96}} animate={{opacity:1,scale:1}} transition={{duration:1}} className="relative">
+            <div className="absolute -top-6 -left-6 text-[10px] uppercase tracking-[.3em] text-[#00f2ea]">01 / Profile</div>
+            <div className="relative aspect-[4/5] overflow-hidden border border-white/10 bg-white/[.03]">
+              <img src={profile} alt={me.name} className="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+              <div className="absolute bottom-5 left-5 right-5 flex justify-between items-end">
+                <div><p className="text-2xl font-bold">{me.name}</p><p className="text-xs text-white/45 mt-1">Software • Systems • Security • IT</p></div>
+                <span className="text-[#00f2ea] text-xs font-mono">BW / 2026</span>
+              </div>
+            </div>
+            <div className="flex justify-end gap-3 mt-4">
+              {socials.map(([href, Icon, label]) => <a key={label} href={href} target={label === "Email" ? undefined : "_blank"} rel={label === "Email" ? undefined : "noreferrer"} aria-label={label} className="text-white/35 hover:text-[#00f2ea]"><Icon size={15}/></a>)}
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
 }
