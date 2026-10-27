@@ -1,7 +1,8 @@
 export const profile = {
-  name: "Tarie Cipher",
-  brand: "Cypher Technologies",
-  role: "Software Engineer & Technology Builder",
+  name: "Tariro Mtshakatshi",
+  brand: "Tariro Mtshakatshi",
+  alias: "Tarie Cipher",
+  role: "Software Developer & Technology Builder",
   tagline: "Web development, business systems, APIs, cybersecurity, infrastructure, networking and IT support.",
   location: "Tlokweng, Gaborone, Botswana",
   serviceArea: "Tlokweng • Gaborone • Botswana • Southern Africa",
